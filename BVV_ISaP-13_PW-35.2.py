@@ -14,6 +14,9 @@ count_of_rnd_points = None;
 while count_of_rnd_points == None:
     try:
         count_of_rnd_points = int(input("Enter count of random points: "))
+        if count_of_rnd_points < 2:
+            count_of_rnd_points = None
+            raise
     except:
         print("\nUncorrect input!\n")
     

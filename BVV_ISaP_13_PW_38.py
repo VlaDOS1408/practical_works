@@ -7,3 +7,5 @@ for char in input_text:
 print(f"The number of letters \"t\" in the line \"{input_text}\" is - {count_t}\nWith use cycle 'for'.")
 
 print(f"The number of letters \"t\" in the line \"{input_text}\" is - {input_text.lower().count("t")}\nWith use class 'string' function.")
+
+input()

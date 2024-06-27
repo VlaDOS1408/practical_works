@@ -3,6 +3,9 @@
 
 def count_divisors(num):
     count = 0
+    
+    if num < 0:
+        num = num - num*2
     #print("Num: "+str(num))
 
     for i in range(1, num+1):
@@ -14,21 +17,24 @@ def count_divisors(num):
 
 startIntervalNum = None;
 endIntervalNum = None;
-numWithMostDivisors = 1;
-numsWithMostDivisors = [1];
+numWithMostDivisors = 0;
+numsWithMostDivisors = [numWithMostDivisors];
 
 
 while startIntervalNum == None:
     try:
         startIntervalNum = int(input("Enter start interval num: "))
     except:
-        print("\nUncorrect value!\n")
+        print("\nUncorrect value!")
 
 while endIntervalNum == None:
     try:
         endIntervalNum = int(input("Enter end interval num: "))
+        if endIntervalNum < startIntervalNum:
+            endIntervalNum = None
+            raise;
     except:
-        print("\nUncorrect value!\n")
+        print("\nUncorrect value!")
 
 
 for i in range(startIntervalNum, endIntervalNum+1, 1):
